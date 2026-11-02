@@ -1,5 +1,8 @@
 """Задачи второй части лабораторной: корреляционный анализ."""
 from __future__ import annotations
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
  
 import pandas as pd
  
@@ -33,3 +36,15 @@ def analyze_brain_correlations(data: BrainDataInput) -> BrainCorrelationSummary:
         men_mri_correlation=men_corr,
         strongest_mri_feature=strongest,
     )
+
+df = pd.read_csv('brainsize.txt', sep='\t', na_values='NA')
+features = ['FSIQ', 'VIQ', 'PIQ', 'Weight', 'Height', 'MRI_Count']
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+for ax, (gender, group) in zip(axes, df.groupby('Gender')):
+    sns.heatmap(group[features].corr(), annot=True, fmt='.2f', cmap='coolwarm', vmin=-1, vmax=1, ax=ax)
+    ax.set_title(gender)
+plt.show()
+
+sns.pairplot(df, vars=features, hue='Gender')
+plt.show()
