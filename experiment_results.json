@@ -1,0 +1,116 @@
+{
+  "random_seed": 42,
+  "split": "train_test_split(test_size=0.25, stratify=y)",
+  "n_train": 750,
+  "n_test": 250,
+  "selection_criterion": "ROC-AUC 5-fold stratified CV on train",
+  "final_model": "Soft Voting: RandomForest + GradientBoosting + LogisticRegression",
+  "final_test_metrics": {
+    "roc_auc": 0.839695238095238,
+    "accuracy": 0.792,
+    "precision": 0.8121827411167513,
+    "recall": 0.9142857142857143,
+    "f1": 0.8602150537634409
+  },
+  "experiments": [
+    {
+      "model": "Logistic Regression (baseline)",
+      "cv_roc_auc_train": 0.7567238095238095,
+      "roc_auc": 0.7991619047619049,
+      "accuracy": 0.796,
+      "precision": 0.8263157894736842,
+      "recall": 0.8971428571428571,
+      "f1": 0.8602739726027397
+    },
+    {
+      "model": "Random Forest",
+      "cv_roc_auc_train": 0.772732275132275,
+      "roc_auc": 0.8368,
+      "accuracy": 0.776,
+      "precision": 0.7793427230046949,
+      "recall": 0.9485714285714286,
+      "f1": 0.8556701030927835
+    },
+    {
+      "model": "Extra Trees",
+      "cv_roc_auc_train": 0.758941798941799,
+      "roc_auc": 0.8096,
+      "accuracy": 0.784,
+      "precision": 0.776255707762557,
+      "recall": 0.9714285714285714,
+      "f1": 0.8629441624365483
+    },
+    {
+      "model": "AdaBoost",
+      "cv_roc_auc_train": 0.7237925925925925,
+      "roc_auc": 0.8103238095238096,
+      "accuracy": 0.72,
+      "precision": 0.7160493827160493,
+      "recall": 0.9942857142857143,
+      "f1": 0.8325358851674641
+    },
+    {
+      "model": "Gradient Boosting",
+      "cv_roc_auc_train": 0.76354708994709,
+      "roc_auc": 0.8392380952380953,
+      "accuracy": 0.788,
+      "precision": 0.8080808080808081,
+      "recall": 0.9142857142857143,
+      "f1": 0.8579088471849866
+    },
+    {
+      "model": "HistGradientBoosting",
+      "cv_roc_auc_train": 0.7465820105820107,
+      "roc_auc": 0.8338285714285715,
+      "accuracy": 0.768,
+      "precision": 0.7853658536585366,
+      "recall": 0.92,
+      "f1": 0.8473684210526315
+    },
+    {
+      "model": "MLP (32,)",
+      "cv_roc_auc_train": 0.7422222222222221,
+      "roc_auc": 0.7324952380952381,
+      "accuracy": 0.696,
+      "precision": 0.7704918032786885,
+      "recall": 0.8057142857142857,
+      "f1": 0.7877094972067039
+    },
+    {
+      "model": "Voting RF+LR",
+      "cv_roc_auc_train": 0.7771597883597884,
+      "roc_auc": 0.8315428571428573,
+      "accuracy": 0.788,
+      "precision": 0.8080808080808081,
+      "recall": 0.9142857142857143,
+      "f1": 0.8579088471849866
+    },
+    {
+      "model": "Voting RF+GB+LR",
+      "cv_roc_auc_train": 0.7770243386243386,
+      "roc_auc": 0.839695238095238,
+      "accuracy": 0.792,
+      "precision": 0.8121827411167513,
+      "recall": 0.9142857142857143,
+      "f1": 0.8602150537634409
+    },
+    {
+      "model": "Voting RF+GB+LR+MLP",
+      "cv_roc_auc_train": 0.7750433862433862,
+      "roc_auc": 0.8132571428571428,
+      "accuracy": 0.78,
+      "precision": 0.8061224489795918,
+      "recall": 0.9028571428571428,
+      "f1": 0.8517520215633423
+    },
+    {
+      "model": "Voting RF+ET+GB+LR+MLP",
+      "cv_roc_auc_train": 0.7756021164021163,
+      "roc_auc": 0.8175999999999999,
+      "accuracy": 0.78,
+      "precision": 0.803030303030303,
+      "recall": 0.9085714285714286,
+      "f1": 0.8525469168900804
+    }
+  ]
+}
